@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Booking summary styles */
+        .booking-summary {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            text-align: left;
+        }
+
+        .booking-summary h2 {
+            margin: 0 0 15px 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .booking-summary p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .booking-summary button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .booking-summary button:hover {
+            background-color: #0056b3;
+        }
+
+    .next-button {
+        background-color: #3a6295; /* Green color */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .next-button:hover {
+        background-color: #3e5e8e; /* Green with darker shade on hover */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="booking-summary">
+        <h2>Booking Summary</h2>
+        <p>Total Price: ${{ booking_data["total_price"] }}</p>
+        <p>Payment Method: {{ booking_data["payment_method"] }}</p>
+        <p>Card Holder Name: {{ booking_data["card_holder"] }}</p>
+        <p>Card Details: **** **** **** ****</p>
+    </div>
+
+    <a href="/sixth" class="next-button">Back</a>
+    <a href="/eleventh" class="next-button">Next</a>
+
+</body>
+</html>

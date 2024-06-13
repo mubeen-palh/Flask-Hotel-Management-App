@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Summary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Booking summary styles */
+        .booking-summary {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-summary h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .booking-summary h3 {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .booking-summary p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .booking-summary ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .booking-summary ul li {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .booking-summary h3.total {
+            font-size: 24px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+        .next-button {
+        background-color: #3a6295; /* Green color */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .next-button:hover {
+        background-color: #3e5e8e; /* Green with darker shade on hover */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="booking-summary">
+        <h2>Booking Summary</h2>
+        <p>Booking Date: {{ booking_data["booking_date"] }}</p>
+        <h3>Stay Details</h3>
+        <p>Check-in: {{ booking_data["check_in"] }}</p>
+        <p>Check-out: {{ booking_data["check_out"] }}</p>
+        <p>Guests: {{ booking_data["guests"] }}</p>
+
+        <h3>Room(s)</h3>
+        <ul>
+            {% for room in booking_data["rooms"] %}
+                <li>{{ room["name"] }} - ${{ room["amount"] }}</li>
+            {% endfor %}
+        </ul>
+
+        <p>Amount: ${{ booking_data["amount"] }}</p>
+        <p>Tax: ${{ booking_data["tax"] }}</p>
+        <h3 class="total">Total: ${{ booking_data["total"] }}</h3>
+    </div>
+    <a href="/sixth" class="next-button">Back</a>
+    <a href="/tenth" class="next-button">Next</a>
+</body>
+</html>

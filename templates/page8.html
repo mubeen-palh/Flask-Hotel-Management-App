@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Schedule</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style the elements as needed */
+
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        nav {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .schedule-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .schedule-list li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .date {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .location {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .description {
+            color: #666;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/sixth">Home</a></li>
+        </ul>
+    </nav>
+
+    <h1 style="text-align: center;">My Schedule</h1>
+    <ul class="schedule-list">
+        {% for entry in schedule_entries %}
+            <li>
+                <div class="date">{{ entry["date"] }}</div>
+                <div class="location">{{ entry["location"] }}</div>
+                {% if entry["description"] %}
+                    <div class="description">{{ entry["description"] }}</div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
